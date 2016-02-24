@@ -1,0 +1,106 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/Cellar/node/5.5.0/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'publish' ]
+2 info using npm@3.3.10
+3 info using node@v5.5.0
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/Users/cezarluiz/Documents/Web/Libs/Anchor',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /Users/cezarluiz/.npm/anchor.js/1.0.0/package.tgz not in flight; packing
+9 info lifecycle anchor.js@1.0.0~prepublish: anchor.js@1.0.0
+10 verbose lifecycle anchor.js@1.0.0~prepublish: unsafe-perm in lifecycle true
+11 verbose lifecycle anchor.js@1.0.0~prepublish: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/cezarluiz/Documents/Web/Libs/Anchor/node_modules/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+12 verbose lifecycle anchor.js@1.0.0~prepublish: CWD: /Users/cezarluiz/Documents/Web/Libs/Anchor
+13 silly lifecycle anchor.js@1.0.0~prepublish: Args: [ '-c', 'npm run compile' ]
+14 silly lifecycle anchor.js@1.0.0~prepublish: Returned: code: 0  signal: null
+15 verbose tar pack [ '/Users/cezarluiz/.npm/anchor.js/1.0.0/package.tgz',
+15 verbose tar pack   '/Users/cezarluiz/Documents/Web/Libs/Anchor' ]
+16 verbose tarball /Users/cezarluiz/.npm/anchor.js/1.0.0/package.tgz
+17 verbose folder /Users/cezarluiz/Documents/Web/Libs/Anchor
+18 verbose addLocalTarball adding from inside cache /Users/cezarluiz/.npm/anchor.js/1.0.0/package.tgz
+19 silly cache afterAdd anchor.js@1.0.0
+20 verbose afterAdd /Users/cezarluiz/.npm/anchor.js/1.0.0/package/package.json not in flight; writing
+21 verbose afterAdd /Users/cezarluiz/.npm/anchor.js/1.0.0/package/package.json written
+22 silly publish { name: 'anchor.js',
+22 silly publish   version: '1.0.0',
+22 silly publish   description: 'Click and go to target. Pretty simple with only 1.85KB and without dependencies.',
+22 silly publish   main: 'dist/anchor.min.js',
+22 silly publish   scripts:
+22 silly publish    { test: 'echo "Error: no test specified" && exit 1',
+22 silly publish      compile: 'uglifyjs src/anchor.js -c sequences=true,dead_code=true,conditionals=true,booleans=true,unused=true,if_return=true,join_vars=true,drop_console=true -m -o dist/anchor.min.js',
+22 silly publish      prepublish: 'npm run compile' },
+22 silly publish   repository:
+22 silly publish    { type: 'git',
+22 silly publish      url: 'git+https://github.com/CezarLuiz0/anchor.git' },
+22 silly publish   keywords: [ 'anchor', 'scoll', 'link', 'animation', 'javascript', 'js', 'es5' ],
+22 silly publish   author:
+22 silly publish    { name: 'Cezar Luiz',
+22 silly publish      email: 'cezarluiz.c@gmail.com',
+22 silly publish      url: 'https://github.com/CezarLuiz0' },
+22 silly publish   license: 'MIT',
+22 silly publish   bugs: { url: 'https://github.com/CezarLuiz0/anchor/issues' },
+22 silly publish   homepage: 'https://github.com/CezarLuiz0/anchor#readme',
+22 silly publish   readme: '# Anchor\n\n> :anchor: Click and go to target. Pretty simple with only 1.85KB and without dependencies.\n\n## Install\n\n### Bower\n\n```\nbower install anchor.js --save\n```\n\n### npm\n\n```\nnpm install anchor.js --save\n```\n\n### CDN\n\n```html5\n<script src="https://cdn.rawgit.com/CezarLuiz0/anchor/master/dist/anchor.min.js"></script>\n```\n\n## Usage\n\nThe simplest way.\n\n```html5\n<header>\n  <button data-anchor=".contact">\n    Contact Us!\n  </button>\n\n  <section class="contact">\n    ...\n  </section>\n</header>\n```\n\n```javascript\nvar anchor = new Anchor();\n\nanchor.init();\n```\n\nDo you want more options? Sure!\n\n```html5\n<header>\n  <button\n    data-anchor="#jobs"\n    data-duration="2000"\n    data-offset="200"\n  >\n    View our Jobs!\n  </button>\n\n  <div id="jobs">\n    ...\n  </div>\n</header>\n```\n\n## Options\n\n```html5\n<a\n  href="#fallback"\n  data-anchor=".clientes-container"\n  data-duration="1200"\n  data-offset="80"\n  data-callback="done"\n  data-easing="myCustomEasing"\n>\n  Our clients\n</a>\n```\n\n### Defaults\n\nAttribute|Required?|Default|Description\n---------|---------|-------|-----------\n`data-anchor`|Yes|-|A CSS like selector to your target.\n`data-duration`|No|`800`|In milliseconds.\n`data-offset`|No|`0`|Self descriptive :)\n`data-callback`|No|-|The callback will be called when the scroll is finished.\n`data-easing`|No|`easeInOutQuad`|The easing function. You can create your custom easing. Yes!\n\n#### Callback\n\n```html5\n<button\n  data-anchor=".container"\n  data-callback="done"\n>\n  Our clients\n</button>\n```\n\n```javascript\nvar anchor = new Anchor();\nanchor.init();\n\nfunction done() {\n  alert(\'Scroll reached the target!\');\n}\n```\n\n#### Easing\n\nYou can create your custom easing: [Click here to create](http://goo.gl/n4qV3)\n\n```html5\n<button\n  data-anchor=".container"\n  data-easing="myCustomEasing"\n>\n  Our clients\n</button>\n```\n\n```javascript\nvar anchor = new Anchor({\n  easings: {\n    // Example with \'back in quartic\' easing\n    myCustomEasing: function(t, b, c, d) {\n      var ts=(t/=d)*t;\n      var tc=ts*t;\n      return b+c*(2*ts*ts + 2*tc + -3*ts);\n    }\n  }\n});\n\nanchor.init();\n```\n\n## License\n\nMIT.\n\nDid you like it? Fork and contribute ;)\n\nMade with :heart:',
+22 silly publish   readmeFilename: 'README.md',
+22 silly publish   gitHead: '50bff36fdf99a146263e63268a9a77557f59bdf3',
+22 silly publish   _id: 'anchor.js@1.0.0',
+22 silly publish   _shasum: 'a4ba29228a369515c1d638b7805dcb3c261a9263',
+22 silly publish   _from: '.' }
+23 verbose getPublishConfig undefined
+24 silly mapToRegistry name anchor.js
+25 silly mapToRegistry using default registry
+26 silly mapToRegistry registry https://registry.npmjs.org/
+27 silly mapToRegistry uri https://registry.npmjs.org/anchor.js
+28 verbose publish registryBase https://registry.npmjs.org/
+29 silly publish uploading /Users/cezarluiz/.npm/anchor.js/1.0.0/package.tgz
+30 verbose request uri https://registry.npmjs.org/anchor.js
+31 verbose request sending authorization for write operation
+32 info attempt registry request try #1 at 01:06:33
+33 verbose request using bearer token for auth
+34 verbose request id 535c762a5c7a5f39
+35 http request PUT https://registry.npmjs.org/anchor.js
+36 http 403 https://registry.npmjs.org/anchor.js
+37 verbose headers { 'content-type': 'application/json',
+37 verbose headers   'cache-control': 'max-age=300',
+37 verbose headers   'content-length': '101',
+37 verbose headers   'accept-ranges': 'bytes',
+37 verbose headers   date: 'Wed, 24 Feb 2016 04:06:35 GMT',
+37 verbose headers   via: '1.1 varnish',
+37 verbose headers   connection: 'keep-alive',
+37 verbose headers   'x-served-by': 'cache-iad2139-IAD',
+37 verbose headers   'x-cache': 'MISS',
+37 verbose headers   'x-cache-hits': '0',
+37 verbose headers   'x-timer': 'S1456286794.443891,VS0,VE624' }
+38 verbose request invalidating /Users/cezarluiz/.npm/registry.npmjs.org/anchor.js on PUT
+39 error publish Failed PUT 403
+40 verbose stack Error: You do not have permission to publish 'anchor.js'. Are you logged in as the correct user? : anchor.js
+40 verbose stack     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:264:12)
+40 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:252:14)
+40 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:172:14)
+40 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:198:22)
+40 verbose stack     at emitTwo (events.js:100:13)
+40 verbose stack     at Request.emit (events.js:185:7)
+40 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1082:10)
+40 verbose stack     at emitOne (events.js:95:20)
+40 verbose stack     at Request.emit (events.js:182:7)
+40 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1009:12)
+41 verbose statusCode 403
+42 verbose pkgid anchor.js
+43 verbose cwd /Users/cezarluiz/Documents/Web/Libs/Anchor
+44 error Darwin 15.3.0
+45 error argv "/usr/local/Cellar/node/5.5.0/bin/node" "/usr/local/bin/npm" "publish"
+46 error node v5.5.0
+47 error npm  v3.3.10
+48 error code E403
+49 error You do not have permission to publish 'anchor.js'. Are you logged in as the correct user? : anchor.js
+50 error If you need help, you may report this error at:
+50 error     <https://github.com/npm/npm/issues>
+51 verbose exit [ 1, true ]

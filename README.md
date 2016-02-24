@@ -13,7 +13,7 @@ bower install anchor.js --save
 ### npm
 
 ```
-npm install anchor.js --save
+npm install js.anchor --save
 ```
 
 ### CDN
