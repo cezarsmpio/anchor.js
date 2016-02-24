@@ -19,7 +19,7 @@ npm install js.anchor --save
 ### CDN
 
 ```html
-<script src="https://cdn.rawgit.com/CezarLuiz0/anchor/master/dist/anchor.min.js"></script>
+<script src="https://cdn.rawgit.com/CezarLuiz0/anchor.js/master/dist/anchor.min.js"></script>
 ```
 
 ## Usage
