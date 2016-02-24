@@ -18,7 +18,7 @@ npm install js.anchor --save
 
 ### CDN
 
-```html5
+```html
 <script src="https://cdn.rawgit.com/CezarLuiz0/anchor/master/dist/anchor.min.js"></script>
 ```
 
@@ -26,7 +26,7 @@ npm install js.anchor --save
 
 The simplest way.
 
-```html5
+```html
 <header>
   <button data-anchor=".contact">
     Contact Us!
@@ -46,7 +46,7 @@ anchor.init();
 
 Do you want more options? Sure!
 
-```html5
+```html
 <header>
   <button
     data-anchor="#jobs"
@@ -64,7 +64,7 @@ Do you want more options? Sure!
 
 ## Options
 
-```html5
+```html
 <a
   href="#fallback"
   data-anchor=".clientes-container"
@@ -89,7 +89,7 @@ Attribute|Required?|Default|Description
 
 #### Callback
 
-```html5
+```html
 <button
   data-anchor=".container"
   data-callback="done"
@@ -111,7 +111,7 @@ function done() {
 
 You can create your custom easing: [Click here to create](http://goo.gl/n4qV3)
 
-```html5
+```html
 <button
   data-anchor=".container"
   data-easing="myCustomEasing"
