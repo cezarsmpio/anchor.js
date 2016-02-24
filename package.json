@@ -1,7 +1,7 @@
 {
   "name": "js.anchor",
   "version": "1.0.1",
-  "description": "Click and go to target. Pretty simple with only 1.85KB and without dependencies.",
+  "description": "Click and go to target. Pretty simple with only 1.7KB and without dependencies.",
   "main": "dist/anchor.min.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
