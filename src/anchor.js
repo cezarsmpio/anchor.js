@@ -1,18 +1,37 @@
 /*!
- * anchor.js v1.0.0
+ * anchor.js v1.0.1
  * https://github.com/CezarLuiz0/anchor
  *
  * Licensed MIT © Cezar Luiz
  */
-
-Object.assign||Object.defineProperty(Object,"assign",{enumerable:!1,configurable:!0,writable:!0,value:function(b){if(void 0===b||null===b)throw new TypeError("Cannot convert first argument to object");for(var f=Object(b),c=1;c<arguments.length;c++){var a=arguments[c];if(void 0!==a&&null!==a)for(var a=Object(a),g=Object.keys(Object(a)),d=0,k=g.length;d<k;d++){var e=g[d],h=Object.getOwnPropertyDescriptor(a,e);void 0!==h&&h.enumerable&&(f[e]=a[e])}}return f}});
-
 (function(window, document) {
 
   // requestAnimationFrame for Smart Animating http://goo.gl/sx5sts
   var requestAnimFrame = (function(){
     return  window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function( callback ){ window.setTimeout(callback, 1000 / 60); };
   })();
+
+  var deepExtend = function(out) {
+    out = out || {};
+
+    for (var i = 1; i < arguments.length; i++) {
+      var obj = arguments[i];
+
+      if (!obj)
+        continue;
+
+      for (var key in obj) {
+        if (obj.hasOwnProperty(key)) {
+          if (typeof obj[key] === 'object')
+            out[key] = deepExtend(out[key], obj[key]);
+          else
+            out[key] = obj[key];
+        }
+      }
+    }
+
+    return out;
+  };
 
   var Anchor = function(options) {
     var self = this;
@@ -43,7 +62,7 @@ Object.assign||Object.defineProperty(Object,"assign",{enumerable:!1,configurable
 
     this.anchors = document.querySelectorAll('[data-anchor]');
 
-    this.opts = Object.assign(defaults, options);
+    this.opts = deepExtend({}, defaults, options);
 
     // Exports
     return {
