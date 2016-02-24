@@ -1,0 +1,24 @@
+{
+  "name": "anchor.js",
+  "description": "Click and go to target. Pretty simple with only 1.85KB and without dependencies.",
+  "main": "dist/anchor.min.js",
+  "authors": [
+    "Cezar Luiz <cezarluiz.c@gmail.com> (https://github.com/CezarLuiz0)"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "anchor",
+    "scroll",
+    "link",
+    "javascript"
+  ],
+  "homepage": "https://github.com/CezarLuiz0/anchor",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

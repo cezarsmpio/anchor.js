@@ -1,0 +1,30 @@
+{
+  "name": "anchor.js",
+  "version": "1.0.0",
+  "description": "Click and go to target. Pretty simple with only 1.85KB and without dependencies.",
+  "main": "dist/anchor.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "uglifyjs src/anchor.js -c sequences=true,dead_code=true,conditionals=true,booleans=true,unused=true,if_return=true,join_vars=true,drop_console=true -m -o dist/anchor.min.js",
+    "prepublish": "npm run compile"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CezarLuiz0/anchor.git"
+  },
+  "keywords": [
+    "anchor",
+    "scoll",
+    "link",
+    "animation",
+    "javascript",
+    "js",
+    "es5"
+  ],
+  "author": "Cezar Luiz <cezarluiz.c@gmail.com> (https://github.com/CezarLuiz0)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CezarLuiz0/anchor/issues"
+  },
+  "homepage": "https://github.com/CezarLuiz0/anchor#readme"
+}
