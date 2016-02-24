@@ -50,8 +50,8 @@ Do you want more options? Sure!
 <header>
   <button
     data-anchor="#jobs"
-    data-duration="2000"
-    data-offset="200"
+    data-anchor-duration="2000"
+    data-anchor-offset="200"
   >
     View our Jobs!
   </button>
@@ -68,10 +68,10 @@ Do you want more options? Sure!
 <a
   href="#fallback"
   data-anchor=".clientes-container"
-  data-duration="1200"
-  data-offset="80"
-  data-callback="done"
-  data-easing="myCustomEasing"
+  data-anchor-duration="1200"
+  data-anchor-offset="80"
+  data-anchor-callback="done"
+  data-anchor-easing="myCustomEasing"
 >
   Our clients
 </a>
@@ -82,17 +82,17 @@ Do you want more options? Sure!
 Attribute|Required?|Default|Description
 ---------|---------|-------|-----------
 `data-anchor`|Yes|-|A CSS like selector to your target.
-`data-duration`|No|`800`|In milliseconds.
-`data-offset`|No|`0`|Self descriptive :)
-`data-callback`|No|-|The callback will be called when the scroll is finished.
-`data-easing`|No|`easeInOutQuad`|The easing function. You can create your custom easing. Yes!
+`data-anchor-duration`|No|`800`|In milliseconds.
+`data-anchor-offset`|No|`0`|Self descriptive :)
+`data-anchor-callback`|No|-|The callback will be called when the scroll is finished.
+`data-anchor-easing`|No|`easeInOutQuad`|The easing function. You can create your custom easing. Yes!
 
 #### Callback
 
 ```html
 <button
   data-anchor=".container"
-  data-callback="done"
+  data-anchor-callback="done"
 >
   Our clients
 </button>
@@ -114,7 +114,7 @@ You can create your custom easing: [Click here to create](http://goo.gl/n4qV3)
 ```html
 <button
   data-anchor=".container"
-  data-easing="myCustomEasing"
+  data-anchor-easing="myCustomEasing"
 >
   Our clients
 </button>
