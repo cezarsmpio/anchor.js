@@ -79,7 +79,7 @@ Do you want more options? Sure!
 </a>
 ```
 
-### Defaults
+### Attributes
 
 Attribute|Required?|Default|Description
 ---------|---------|-------|-----------
