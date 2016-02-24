@@ -2,6 +2,8 @@
 
 > :anchor: Click and go to target. Pretty simple with only 1.85KB and without dependencies.
 
+[Live Demo](https://jsfiddle.net/d854bwxd/2/ )
+
 ## Install
 
 ### Bower
