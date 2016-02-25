@@ -1,6 +1,6 @@
 # Anchor
 
-> :anchor: Click and go to target. Pretty simple with only 1.7KB and without dependencies.
+> :anchor: Click and go to target. Pretty simple with only ~2KB and without dependencies.
 
 [Live Demo](https://jsfiddle.net/d854bwxd/2/ )
 

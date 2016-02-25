@@ -1,6 +1,6 @@
 {
   "name": "js.anchor",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Click and go to target. Pretty simple with only ~2KB and without dependencies.",
   "main": "dist/anchor.min.js",
   "scripts": {
