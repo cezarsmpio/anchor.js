@@ -2,7 +2,7 @@
   "name": "anchor.js",
   "description": "Click and go to target. Pretty simple with only ~2KB and without dependencies.",
   "main": "dist/anchor.min.js",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "authors": [
     "Cezar Luiz <cezarluiz.c@gmail.com> (https://github.com/CezarLuiz0)"
   ],

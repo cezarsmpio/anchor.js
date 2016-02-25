@@ -1,5 +1,5 @@
 /*!
- * anchor.js v1.0.1
+ * anchor.js v1.1.0
  * https://github.com/CezarLuiz0/anchor
  *
  * Licensed MIT © Cezar Luiz
@@ -81,7 +81,7 @@
           e.preventDefault();
 
           var target = document.querySelector(this.getAttribute('data-anchor'));
-          var offset = this.getOffset(target) || 0;
+          var offset = self.getOffset(target) || 0;
           var anchorOffset = this.getAttribute('data-anchor-offset') || 0;
           var duration = this.getAttribute('data-anchor-duration') || 800;
           var callback = this.getAttribute('data-anchor-callback');
