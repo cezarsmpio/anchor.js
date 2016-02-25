@@ -81,13 +81,14 @@
           e.preventDefault();
 
           var target = document.querySelector(this.getAttribute('data-anchor'));
-          var offset = this.getAttribute('data-anchor-offset') || 0;
+          var offset = this.getOffset(target) || 0;
+          var anchorOffset = this.getAttribute('data-anchor-offset') || 0;
           var duration = this.getAttribute('data-anchor-duration') || 800;
           var callback = this.getAttribute('data-anchor-callback');
           var easing = this.getAttribute('data-anchor-easing') || 'easeInOutQuad';
 
           self.scrollTo(
-            target.offsetTop - parseInt(offset),
+            offset.top - parseInt(anchorOffset),
             self.executeFunctionByName.bind(this, callback),
             duration,
             self.opts.easings[easing]
@@ -104,6 +105,20 @@
         // is object a function?
         if (typeof fn === "function") fn.apply(null);
       }
+    },
+
+    getOffset: function(el) {
+      var left = 0;
+      var top = 0;
+
+      if ( el.offsetParent ) {
+        do {
+          left += el.offsetLeft
+          top  += el.offsetTop
+        } while ( el = el.offsetParent )
+      }
+
+      return { 0: left, 1: top, left: left, top: top, length: 2 }
     },
 
     position: function() {
